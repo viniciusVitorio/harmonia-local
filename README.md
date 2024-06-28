@@ -21,7 +21,7 @@ Certifique-se de ter o seguinte instalado na sua máquina:
 1. Clone o repositório:
 
     ```sh
-    git clone https://github.com/seu-usuario/harmonia-local.git
+    git clone https://github.com/harmonia-local/harmonia-local.git
     cd harmonia-local
     ```
 
