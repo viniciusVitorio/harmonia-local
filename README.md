@@ -1,84 +1,85 @@
+
 # 🎵 Harmonia Local
 
-**Harmonia Local** é uma plataforma para artistas locais divulgarem suas músicas. Os usuários podem compartilhar vídeos de suas músicas, deixar comentários e dar likes nas publicações.
+**Harmonia Local** is a platform for local artists to share their music. Users can share videos of their songs, leave comments, and like posts.
 
-## 🚀 Começando
+## 🚀 Getting Started
 
-Siga estas instruções para obter uma cópia do projeto em funcionamento no seu ambiente local para fins de desenvolvimento e testes.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-### 📋 Pré-requisitos
+### 📋 Prerequisites
 
-Certifique-se de ter o seguinte instalado na sua máquina:
+Make sure you have the following installed on your machine:
 
 - PHP >= 8.0
 - Composer
 - PostgreSQL
-- Node.js com npm
+- Node.js with npm
 - Git
 
-### 📦 Instalação
+### 📦 Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
     ```sh
-    git clone https://github.com/harmonia-local/harmonia-local.git
+    git clone https://github.com/viniciusVitorio/harmonia-local.git
     cd harmonia-local
     ```
 
-2. Instale as dependências do PHP:
+2. Install PHP dependencies:
 
     ```sh
     composer install
     ```
 
-3. Instale as dependências do Node.js:
+3. Install Node.js dependencies:
 
     ```sh
     npm install
     ```
 
-4. Copie o arquivo `.env.example` para `.env`:
+4. Copy the `.env.example` file to `.env`:
 
     ```sh
     cp .env.example .env
     ```
 
-5. Configure o arquivo `.env` com suas credenciais de banco de dados PostgreSQL.
+5. Configure the `.env` file with your PostgreSQL database credentials.
 
-6. Gere a chave da aplicação:
+6. Generate the application key:
 
     ```sh
     php artisan key:generate
     ```
 
-7. Execute as migrações do banco de dados:
+7. Run the database migrations:
 
     ```sh
     php artisan migrate
     ```
 
-8. Inicie o servidor local:
+8. Start the local server:
 
     ```sh
     php artisan serve
     ```
 
-### 🎨 Usando Tailwind CSS
+### 🎨 Using Tailwind CSS
 
-Certifique-se de que o Tailwind CSS está configurado corretamente no projeto. Para compilar os assets com Vite, use o comando:
+Make sure Tailwind CSS is properly configured in the project. To compile the assets with Vite, use the command:
 
 ```sh
 npm run dev
 ```
 
-### 🎶 Funcionalidades
+### 🎶 Features
 
-- 🎤 **Publicação de Músicas**: Artistas podem fazer upload de vídeos das suas músicas.
-- 👍 **Likes**: Usuários podem curtir as músicas postadas.
-- 💬 **Comentários**: Usuários podem comentar nas postagens de música.
-- 🔐 **Autenticação**: Autenticação de usuários usando Laravel Breeze.
+- 🎤 **Music Posting**: Artists can upload videos of their songs.
+- 👍 **Likes**: Users can like posted songs.
+- 💬 **Comments**: Users can comment on music posts.
+- 🔐 **Authentication**: User authentication using Laravel Breeze.
 
-### 🛠️ Tecnologias Utilizadas
+### 🛠️ Technologies Used
 
 - Laravel
 - PostgreSQL
