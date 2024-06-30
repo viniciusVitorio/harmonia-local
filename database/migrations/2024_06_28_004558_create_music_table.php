@@ -13,7 +13,7 @@ class CreateMusicTable extends Migration
      */
     public function up()
     {
-        Schema::create('musics', function (Blueprint $table) {
+        Schema::create('music', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('artist');
