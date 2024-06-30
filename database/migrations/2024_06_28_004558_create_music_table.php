@@ -18,6 +18,7 @@ class CreateMusicTable extends Migration
             $table->string('title');
             $table->string('artist');
             $table->string('album');
+            $table->string('description');
             $table->string('url_video');
             $table->date('release_date');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
