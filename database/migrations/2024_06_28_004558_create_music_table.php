@@ -13,18 +13,22 @@ class CreateMusicTable extends Migration
      */
     public function up()
     {
-        Schema::create('music', function (Blueprint $table) {
+        Schema::create('musics', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('artist');
-            $table->string('album');
-            $table->string('description');
-            $table->string('url_video');
-            $table->date('release_date');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('album')->nullable();
+            $table->string('description')->nullable(); 
+            $table->string('url_video')->nullable(); 
+            $table->date('release_date')->nullable();
+            $table->string('file_path')->nullable();
+            $table->unsignedBigInteger('user_id'); 
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
+
 
     /**
      * Reverse the migrations.

@@ -72,5 +72,6 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
-
+    
+    'max_file_size' => env('MAX_FILE_SIZE', 102400),
 ];
