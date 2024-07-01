@@ -10,10 +10,13 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('music_id');
             $table->text('content');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('music_id')->constrained('music')->onDelete('cascade');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('music_id')->references('id')->on('music')->onDelete('cascade');
         });
     }
 
