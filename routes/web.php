@@ -21,6 +21,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/likes/{music}', [LikeController::class, 'destroy'])->name('likes.destroy');
 
     Route::post('/comments/{music}', [CommentController::class, 'store'])->name('comments.store');
+
+    Route::get('/music/{music}/edit', [MusicController::class, 'edit'])->name('music.edit')->middleware('auth');
+    Route::patch('/music/{music}', [MusicController::class, 'update'])->name('music.update')->middleware('auth');
+    Route::delete('/music/{music}', [MusicController::class, 'destroy'])->name('music.destroy')->middleware('auth');    
 });
 
 require __DIR__.'/auth.php';

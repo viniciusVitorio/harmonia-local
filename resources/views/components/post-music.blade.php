@@ -1,15 +1,15 @@
 @props(['music'])
 
-<div class="post-music w-full md:w-2/3 lg:w-1/2 xl:w-1/3 h-auto my-5 bg-white rounded-lg shadow-md p-6">
+<div class="post-music w-full md:w-2/3 lg:w-1/2 xl:w-1/3 h-auto mt-10 my-5 bg-white rounded-lg shadow-md p-6">
     <div class="flex items-center gap-3 mb-4">
         <img class="h-10 w-10 rounded-full" src="{{ asset('assets/user.png') }}" alt="Usuário">
         <span class="font-semibold">{{ $music->user->name }}</span>
     </div>
 
     <div class="mt-4 w-full">
-        <span class="text-xl font-bold">Titulo: {{ $music->title }}</span>
+        <span class="text-xl font-bold">Título: {{ $music->title }}</span>
         <p class="text-sm text-gray-600">Artista: {{ $music->artist }}</p>
-        <p class="text-sm text-gray-600">Album: {{ $music->album }}</p>
+        <p class="text-sm text-gray-600">Álbum: {{ $music->album }}</p>
         <p class="mt-2">{{ $music->description }}</p>
         <p class="text-sm text-gray-500 mt-2">Lançado em: {{ \Carbon\Carbon::parse($music->release_date)->format('d/m/Y') }}</p>
 
@@ -61,8 +61,8 @@
     @auth
         <form action="{{ route('comments.store', $music->id) }}" method="POST" class="mt-4">
             @csrf
-            <textarea name="content" rows="2" class="w-full p-2 border rounded" placeholder="Add a comment..."></textarea>
-            <button type="submit" class="mt-2 bg-[#4f46e5] text-white py-2 px-4 rounded">Comment</button>
+            <textarea name="content" rows="2" class="w-full p-2 border rounded" placeholder="Adicionar um comentário..."></textarea>
+            <button type="submit" class="mt-2 bg-[#4f46e5] text-white py-2 px-4 rounded">Comentar</button>
         </form>
     @endauth
 
@@ -74,4 +74,15 @@
             </div>
         @endforeach
     </div>
+
+    @if (auth()->id() === $music->user_id)
+        <div class="mt-4 flex items-center gap-2">
+            <a href="{{ route('music.edit', $music->id) }}" class="text-blue-500">Editar</a>
+            <form action="{{ route('music.destroy', $music->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="text-red-500">Excluir</button>
+            </form>
+        </div>
+    @endif
 </div>
