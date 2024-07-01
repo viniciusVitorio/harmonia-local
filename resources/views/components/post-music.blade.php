@@ -48,7 +48,7 @@
         <form action="{{ route('comments.store', $music->id) }}" method="POST" class="mt-4">
             @csrf
             <textarea name="content" rows="2" class="w-full p-2 border rounded" placeholder="Add a comment..."></textarea>
-            <button type="submit" class="mt-2 bg-blue-500 text-white py-2 px-4 rounded">Comment</button>
+            <button type="submit" class="mt-2 bg-[#4f46e5] text-white py-2 px-4 rounded">Comment</button>
         </form>
     @endauth
 
