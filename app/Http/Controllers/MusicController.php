@@ -9,7 +9,7 @@ class MusicController extends Controller
 {
     public function index()
     {
-        $musics = Music::with(['user', 'likes', 'comments'])->get();
+        $musics = Music::with(['user', 'likes', 'comments'])->orderBy('created_at', 'desc')->get();
         return view('home', compact('musics'));
     }
 }
