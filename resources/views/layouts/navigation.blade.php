@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white white:bg-gray-800 border-b border-gray-100 white:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white white:bg-gray-800 border-b border-gray-100 white:border-gray-700 sticky top-0">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                        {{ __('Home') }}
+                        {{ __('Inicio') }}
                     </x-nav-link>
                 </div>
                 
@@ -46,7 +46,7 @@
                                     @csrf
                                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                                 this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Sair') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
