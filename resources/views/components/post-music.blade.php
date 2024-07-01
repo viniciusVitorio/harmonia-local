@@ -7,6 +7,12 @@
     </div>
 
     <div class="mt-4 w-full">
+        <span class="text-xl font-bold">Titulo: {{ $music->title }}</span>
+        <p class="text-sm text-gray-600">Artista: {{ $music->artist }}</p>
+        <p class="text-sm text-gray-600">Album: {{ $music->album }}</p>
+        <p class="mt-2">{{ $music->description }}</p>
+        <p class="text-sm text-gray-500 mt-2">Released on: {{ \Carbon\Carbon::parse($music->release_date)->format('d/m/Y') }}</p>
+
         @if ($music->url_video)
             @php
                 preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $music->url_video, $matches);
