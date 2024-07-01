@@ -9,6 +9,8 @@ class Music extends Model
 {
     use HasFactory;
 
+    protected $table = 'music'; // Adicione esta linha para especificar o nome da tabela
+
     protected $fillable = [
         'title', 
         'artist', 
@@ -26,5 +28,21 @@ class Music extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the likes for the music.
+     */
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    /**
+     * Get the comments for the music.
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
