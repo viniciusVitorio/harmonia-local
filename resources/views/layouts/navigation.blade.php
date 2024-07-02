@@ -53,10 +53,10 @@
                     </x-dropdown>
                 </div>
             @else
-            <div class="flex items-center justify-center gap-2 text-sm">
-                <a href="/login" class="font-bold hover:underline">Entre</a>
+            <div class="flex items-center justify-center gap-1 text-sm">
+                <a href="/login" class="font-bold hover:underline text-[#4f46e5]">Entre</a>
                 <span>ou</span>
-                <a href="/register" class="font-bold hover:underline">Cadastre-se</a>
+                <a href="/register" class="font-bold hover:underline text-[#4f46e5]">Cadastre-se</a>
             </div>
             @endif
 
